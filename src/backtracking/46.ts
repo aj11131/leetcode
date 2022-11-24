@@ -6,15 +6,18 @@ function permute(nums: number[]): number[][] {
 
   for (let i = 0; i < nums.length; i++) {
     let n = nums.pop() as number;
+
     let perms = permute(nums);
 
-    perms.forEach(perm => perm.push(n));
+    perms.forEach((perm) => perm.push(n));
+
     result = result.concat(perms);
+
     nums.push(n);
   }
 
   return result;
-};
+}
 
 // dfs solution
 // function permute(nums: number[]): number[][] {
@@ -51,4 +54,4 @@ function permute(nums: number[]): number[][] {
 //   return permutations;
 // };
 
-console.log(permute([1,2,3,4]));
+console.log(permute([1, 2, 3]));
